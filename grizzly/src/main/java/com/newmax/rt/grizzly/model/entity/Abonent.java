@@ -16,6 +16,30 @@ public class Abonent {
 	@Column(name = "AB_FIRM")
 	private String name;
 	
-	@Column(name = "AB_ACCOUT")
+	@Column(name = "AB_ACCOUNT")
 	private String account;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
 }
