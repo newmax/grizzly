@@ -91,6 +91,31 @@
         <artifactId>aspectjweaver</artifactId>
         <version>1.6.10</version>
       </dependency>
+      
+      	  <!--Servlet & JSP-->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+		<scope>provided</scope>
+        <version>2.5</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jsp-api</artifactId>
+        <scope>provided</scope>
+        <version>2.0</version>
+      </dependency>   
+      
+    <dependency>
+      <groupId>org.tuckey</groupId>
+      <artifactId>urlrewritefilter</artifactId>
+      <version>3.1.0</version>
+    </dependency>
   
 	<dependency>
   	  <groupId>org.slf4j</groupId>

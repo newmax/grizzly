@@ -20,6 +20,7 @@
   <bean id="abonentDao"
         class="com.newmax.rt.grizzly.model.dao.hibernate.AbonentHibernateDao"
         parent="abstractHibernateDao"/>
+  
   <!--Injecting sessionFactory bean to class AbstractHibernateDao, this way
     resolves a problem of multiple DAO beans definition -->
   <bean id="abstractHibernateDao"
@@ -37,14 +38,16 @@
     <property name="username" value="${jdbc.username:root}"/>
     <property name="password" value="${jdbc.password:root}"/>
   </bean>
-  <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+  
+  <!-- <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  -->
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
     <property name="dataSource" ref="dataSource"/>
     <property name="annotatedClasses">
     <!-- <property name="mappingResources">
           <list>
             <value>/org/jtalks/jcommune/model/entity/User.hbm.xml</value> -->
 		<list>
-			<value>com.newmax.rt.grizzly.model.Abonent</value>
+			<value>com.newmax.rt.grizzly.model.entity.Abonent</value>
 		</list>
 	</property>
     <property name="hibernateProperties">
@@ -59,9 +62,11 @@
       </props>
     </property>
   </bean>
+  
   <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
     <property name="sessionFactory" ref="sessionFactory"/>
   </bean>
+  
   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="location" value="classpath:/com/newmax/rt/grizzly/model/datasource.properties"/>
   </bean>

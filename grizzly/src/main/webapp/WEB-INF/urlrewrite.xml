@@ -8,7 +8,7 @@ The filter itself is used to make decorator.jsp localization available.-->
 <urlrewrite>
   <rule>
     <from>/</from>
-    <to type="redirect">/index.html</to>
+    <to type="redirect">/grizzly/index.html</to>
   </rule>
 
 </urlrewrite>

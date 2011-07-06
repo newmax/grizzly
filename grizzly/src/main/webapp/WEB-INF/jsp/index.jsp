@@ -9,7 +9,7 @@
 </head>
 <body>
 Welcome to Grizzly! 
-&nbsp &nbsp
-<a href="${pageContext.request.contextPath}/abonent.html"></a>
+&nbsp; &nbsp;
+<a href="${pageContext.request.contextPath}/abonent.html">Abonent</a>
 </body>
 </html>

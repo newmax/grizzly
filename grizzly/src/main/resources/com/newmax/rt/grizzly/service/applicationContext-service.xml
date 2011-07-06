@@ -19,11 +19,11 @@
     </tx:attributes>
   </tx:advice>
 
-  <!--Decalaration services bean -->
+  <!--Declaration services bean -->
 
-  <bean id="userService"
+  <bean id="abonentService"
         class="com.newmax.rt.grizzly.service.transactional.TransactionalAbonentService">
-    <constructor-arg index="0" ref="userDao"/>
+    <constructor-arg index="0" ref="abonentDao"/>
   </bean>
 
 </beans>

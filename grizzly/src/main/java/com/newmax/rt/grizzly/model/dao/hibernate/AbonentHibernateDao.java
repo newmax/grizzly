@@ -1,32 +1,16 @@
 package com.newmax.rt.grizzly.model.dao.hibernate;
 
 import com.newmax.rt.grizzly.model.dao.AbonentDao;
+import com.newmax.rt.grizzly.model.dao.Dao;
 import com.newmax.rt.grizzly.model.entity.Abonent;
+import com.newmax.rt.grizzly.model.entity.Persistent;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 
-public class AbonentHibernateDao extends AbstractHibernateDao implements AbonentDao{
+public class AbonentHibernateDao extends AbstractHibernateDao<Abonent> implements AbonentDao {
    
-    /**
-     * Type of entity
-     */
-    private final Class<Abonent> type = getType();
-
-    /**
-     * Retrieves parametrized type of entity using reflection.
-     *
-     * @return type of entity
-     */
-    @SuppressWarnings("unchecked")
-	private Class<Abonent> getType() {
-        return (Class<Abonent>) ((ParameterizedType) getClass()
-                .getGenericSuperclass()).getActualTypeArguments()[0];
-    }
-
-    public Abonent get(Long id) {
-        return (Abonent) getSession().get(type, id);
-    }	
-   
+  
     /**
      * {@inheritDoc}
      */
@@ -37,9 +21,6 @@ public class AbonentHibernateDao extends AbstractHibernateDao implements Abonent
          .uniqueResult();
 	}
 	
-    public boolean isExist(Long id) {
-        return get(id) != null;
-    }
 
 	public Abonent getById(Long id) {
 		// TODO Auto-generated method stub

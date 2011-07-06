@@ -5,12 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "SIP_W.CT_USERS")
+//@Entity
+//@Table(name = "SIP_W.CT_USERS")
 public class User {
 	
-	@Id
-	@Column(name = "US_USER_NAME")
+	//@Id
+	//@Column(name = "US_USER_NAME")
 	private String name;
 
 	public String getName() {
