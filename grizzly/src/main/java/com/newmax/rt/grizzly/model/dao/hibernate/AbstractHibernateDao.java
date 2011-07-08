@@ -3,7 +3,7 @@ package com.newmax.rt.grizzly.model.dao.hibernate;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 
-import org.hibernate.Session;
+import org.hibernate.classic.Session;
 import org.hibernate.SessionFactory;
 
 import com.newmax.rt.grizzly.model.dao.Dao;

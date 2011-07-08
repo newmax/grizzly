@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SIP_W.ABONENT")
+@Table(name = "ABONENT", schema = "SIP_W")
 public class Abonent extends Persistent {
 	
 	@Id

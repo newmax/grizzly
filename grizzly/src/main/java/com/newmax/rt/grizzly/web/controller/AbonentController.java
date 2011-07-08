@@ -33,6 +33,6 @@ public class AbonentController {
      */
     @RequestMapping(value = "/abonent", method = RequestMethod.GET)
     public ModelAndView abonent() throws NotFoundException {
-        return new ModelAndView("abonent", "someAbonent", abonentService.getByAccount("165959045631"));
+        return new ModelAndView("abonent", "someAbonent", abonentService.getByAccount("165959058491"));
     }
 }
