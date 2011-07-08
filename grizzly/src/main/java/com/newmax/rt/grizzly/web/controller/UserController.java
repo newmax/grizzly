@@ -7,31 +7,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.newmax.rt.grizzly.service.AbonentService;
+import com.newmax.rt.grizzly.service.UserService;
 import com.newmax.rt.grizzly.service.exceptions.NotFoundException;
 
 @Controller
-public class AbonentController {
-    private AbonentService abonentService;
-
+public class UserController {
+	private UserService userService;
+	
     /**
      * Constructor creates MVC controller with specified BranchService
      *
-     * @param abonentService autowired object from Spring Context
+     * @param userService autowired object from Spring Context
      */
     @Autowired
-    public AbonentController(AbonentService abonentService) {
-        this.abonentService = abonentService;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
-
+    
     /**
      * This method handles GET request and produces JSP page with all topic branches
      *
      * @return {@link ModelAndView} with view name as renderAllBranches
      * @throws NotFoundException 
      */
-    @RequestMapping(value = "/abonent", method = RequestMethod.GET)
-    public ModelAndView abonent() throws NotFoundException {
-        return new ModelAndView("abonent", "abonent", abonentService.getByAccount("165959058491"));
+    @RequestMapping(value = "/user/{name}.html", method = RequestMethod.GET)
+    public ModelAndView user(@PathVariable("name") String name) throws NotFoundException {
+        return new ModelAndView("user", "user", userService.getByName(name));
     }
 }

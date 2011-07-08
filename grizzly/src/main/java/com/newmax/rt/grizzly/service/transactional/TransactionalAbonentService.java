@@ -22,6 +22,9 @@ public class TransactionalAbonentService implements AbonentService {
         this.dao = dao;
     }
 	
+    /**
+     * {@inheritDoc}
+     */
 	public Abonent getByAccount(String account) throws NotFoundException {
 		Abonent abonent = dao.getByAccount(account);
         if (abonent == null) {

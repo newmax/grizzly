@@ -15,9 +15,4 @@ public class AbonentHibernateDao extends AbstractHibernateDao<Abonent> implement
 				.uniqueResult();
 	}
 
-	public Abonent getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

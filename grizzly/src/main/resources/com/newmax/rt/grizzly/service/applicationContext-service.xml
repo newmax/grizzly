@@ -25,5 +25,10 @@
         class="com.newmax.rt.grizzly.service.transactional.TransactionalAbonentService">
     <constructor-arg index="0" ref="abonentDao"/>
   </bean>
+  
+    <bean id="userService"
+        class="com.newmax.rt.grizzly.service.transactional.TransactionalUserService">
+    <constructor-arg index="0" ref="userDao"/>
+  </bean>
 
 </beans>

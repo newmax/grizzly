@@ -4,23 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Abonent</title>
+<title>User</title>
 </head>
 <body>
 	    <div id="content">
-	    <h3>Abonent:</h3>
+	    <h3>User: <c:out value="${user.name}"/></h3>
         <table border="2" width="100%">
-	    <tr><th width=150>account</th>
-	    	<td><c:out value="${abonent.account}"/> </td>
-	    </tr>
-	    <tr><th>name</th>
-			<td><c:out value="${abonent.name}"/> </td>
+	    <tr><th>type</th>
+			<th>login</th>
+			<th>password</th>
+			<th>status</th>
         </tr>
-        <c:forEach var="user" items="${abonent.users}" varStatus="i">
+        <c:forEach var="service" items="${user.services}" varStatus="i">
         <tr>        
-        	<th>user name</th>
-            <td><a href="${pageContext.request.contextPath}/user/${user.name}.html">
-            	<c:out value="${user.name}"/></a></td>
+            <td><c:out value="${service.type}"/></td>
+            <td><c:out value="${service.login}"/></td>
+            <td><c:out value="${service.password}"/></td>
+            <td><c:out value="${service.status}"/></td>
         </tr>
         </c:forEach>
         </table>

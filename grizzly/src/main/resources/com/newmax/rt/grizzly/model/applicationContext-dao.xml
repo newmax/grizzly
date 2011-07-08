@@ -12,22 +12,8 @@
   <!--Declaration of AOP Config -->
   <aop:config>
     <aop:advisor advice-ref="exceptionTranslationInterceptor"
-                 pointcut="execution(* com.newmax.rt.grizzly.model.dao.AbonentDao+.* (*))"/>
-            <!-- pointcut="execution(* com.newmax.rt.grizzly.model.dao.Dao+.* (*))"/>  -->
+                 pointcut="execution(* com.newmax.rt.grizzly.model.dao.Dao+.* (*))"/>
   </aop:config>
-
-  <!--Declaration of DAO beans -->
-  <bean id="abonentDao"
-        class="com.newmax.rt.grizzly.model.dao.hibernate.AbonentHibernateDao"
-        parent="abstractHibernateDao"/>
-  
-  <!--Injecting sessionFactory bean to class AbstractHibernateDao, this way
-    resolves a problem of multiple DAO beans definition -->
-  <bean id="abstractHibernateDao"
-        class="org.jtalks.jcommune.model.dao.hibernate.AbstractHibernateDao"
-        abstract="true">
-    <property name="sessionFactory" ref="sessionFactory"/>
-  </bean>
 
   <!--Declaration and setting up datasource, sessionFactory and transactionalManager
     beans -->
@@ -48,6 +34,8 @@
             <value>/org/jtalks/jcommune/model/entity/User.hbm.xml</value> -->
 		<list>
 			<value>com.newmax.rt.grizzly.model.entity.Abonent</value>
+			<value>com.newmax.rt.grizzly.model.entity.User</value>
+			<value>com.newmax.rt.grizzly.model.entity.UserService</value>
 		</list>
 	</property>
     <property name="hibernateProperties">
@@ -70,4 +58,22 @@
   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="location" value="classpath:/com/newmax/rt/grizzly/model/datasource.properties"/>
   </bean>
+  
+  <!--Injecting sessionFactory bean to class AbstractHibernateDao, this way
+    resolves a problem of multiple DAO beans definition -->
+  <bean id="abstractHibernateDao"
+        class="org.jtalks.jcommune.model.dao.hibernate.AbstractHibernateDao"
+        abstract="true">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+  <!--Declaration of DAO beans -->
+  <bean id="abonentDao"
+        class="com.newmax.rt.grizzly.model.dao.hibernate.AbonentHibernateDao"
+        parent="abstractHibernateDao"/>
+     
+  <bean id="userDao"
+        class="com.newmax.rt.grizzly.model.dao.hibernate.UserHibernateDao"
+        parent="abstractHibernateDao"/> 
+  
 </beans>
