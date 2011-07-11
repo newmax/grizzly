@@ -1,7 +1,8 @@
 package com.newmax.rt.grizzly.model.entity;
 
-import org.joda.time.DateTime;
+//import org.joda.time.DateTime;
 
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +23,10 @@ public class User extends Persistent {
 	private String name;
 
 	@Column(name = "US_REGDATE")
-	private DateTime beginDate;
+	private Date beginDate;
 
 	@Column(name = "US_CLOSE_DATE")
-	private DateTime endDate;	
+	private Date endDate;	
 	
 	@ManyToOne
 	@JoinColumn(name = "US_AB_ID")
@@ -42,11 +43,11 @@ public class User extends Persistent {
 		return abonent;
 	}
 	
-	public DateTime getBeginDate() {
+	public Date getBeginDate() {
 		return beginDate;
 	}
 	
-	public DateTime getEndDate() {
+	public Date getEndDate() {
 		return endDate;
 	}
 	

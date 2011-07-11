@@ -6,11 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>IPTV Users</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<div id="SearchForm">
-	<form:form action="${pageContext.request.contextPath}/report/user/iptv.html" 
+	<form:form action="${pageContext.request.contextPath}/search.html" 
 	           modelAttribute="abonentDto" 
 	           method="POST"
                onsubmit="this.getAttribute('submitted')" 
@@ -26,39 +26,13 @@
 		
 		<table>
 		<tr>
-	    	<td><a href="${pageContext.request.contextPath}/report/user/iptv.html">Reset</a></td>
+        	<td><input type="reset" value="Reset"/></td>
 	        
         	<td><input type="submit" value="Submit"
-            	       onclick="document.findForm.action='${pageContext.request.contextPath}/report/user/iptv.html'"/></td>
+            	       onclick="document.findForm.action='${pageContext.request.contextPath}/search.html'"/></td>
 		</tr>
 		</table>
 	</form:form>
 	</div> <!-- SearchForm -->
-	
-	<c:if test="${ abonent != null }">
-	<div id="UserInfo">
-	<table>
-	<tr>
-		<th>Account</th>
-		<th>Login</th>
-		<th>Password</th>
-	</tr>
-	<c:forEach var="user" items="${abonent.users}">
-		<c:if test="${ user.endDate == null }">
-			<c:forEach var="service" items="${user.services}">
-				<c:if test="${ service.status == 'ON' && service.type == 'IPTV' }">
-	<tr>
-		<td><c:out value="${abonent.account}"></c:out></td>
-		<td><c:out value="${service.login}"></c:out></td>
-		<td><c:out value="${service.password}"></c:out></td>
-	</tr>
-				</c:if>
-			</c:forEach>
-		</c:if>
-	</c:forEach>
-	</table>
-	</div> <!-- UserInfo -->
-	</c:if>
-
 </body>
 </html>

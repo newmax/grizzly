@@ -5,13 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Reports</title>
 </head>
 <body>
-Welcome to Grizzly! 
 <br />
-<a href="${pageContext.request.contextPath}/search.html">Abonent</a>
-<br />
-<a href="${pageContext.request.contextPath}/reports.html">Reports</a>
+<a href="${pageContext.request.contextPath}/report/user/iptv.html">IPTV users</a>
 </body>
 </html>
